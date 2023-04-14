@@ -3,18 +3,6 @@ import numpy as np
 import array
 env = gym.make('CartPole-v1',render_mode='human')
 
-# observation = env.reset()
-# for _ in range(1000):
-#     env.render()
-#     action = env.action_space.sample() # your agent here (this takes random actions)
-#     obs, reward, terminated, truncated, info = env.step(action)
-#     print("observation",obs)
-#     if terminated:
-#         observation = env.reset()
-
-# env.close()
-# obs contain [-0.11021659 -0.60831076  0.07028293  0.7898158 ]
-# change it to array using split function
 
 
 def basic_policy(obs):
@@ -31,10 +19,6 @@ for episode in range(500):
     obs_str = str(obs)
     obs = obs_str.split()
  
-
-
-   
-
     for step in range(200):
         action = basic_policy(obs)
         obs, reward, terminate,truncated, info = env.step(action)
@@ -44,3 +28,5 @@ for episode in range(500):
     totals.append(episode_rewards)
 
 print(np.mean(totals), np.std(totals), np.min(totals), np.max(totals))
+
+

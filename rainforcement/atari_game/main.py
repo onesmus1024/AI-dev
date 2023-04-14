@@ -1,7 +1,5 @@
-import gym
-
-env_name='stocks-v0'
-env = gym.make(env_name, render_mode='human')
+import gymnasium as gym
+env = env = gym.make("ALE/AirRaid-v5")
 
 
 obs = env.reset()
